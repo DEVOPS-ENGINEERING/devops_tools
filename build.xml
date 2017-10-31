@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project default="build-jar" name="StringEx">
+<target name="init">
+<mkdir dir="build/class"/>
+<mkdir dir="dest"/>
+</target>
+<target name="compile" depends="init">
+<javac destdir="build/class" srcdir="src"/>
+</target>
+<target name="build-jar" depends="compile">
+<jar destfile="dest/StringEx.jar" basedir="build/class">
+</jar>
+</target>
+<target name="execute" depends="compile">
+<java classpath="build/class" classname="StringEx"/>
+</target>
+</project>
